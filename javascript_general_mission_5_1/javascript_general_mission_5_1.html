@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScriptの学習</title>
+    <style>
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        padding: 20px;
+      }
+      .game {
+        width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      /* 中央配置 */
+      .parent,
+      .child,
+      .parent-result,
+      .child-result,
+      .role {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+      }
+
+      /* 親・子 */
+      .player {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .child-area .player {
+        margin-top: 20px;
+      }
+      .parent,
+      .child {
+        width: 90px;
+        height: 80px;
+        font-size: 40px;
+      }
+
+      /* 勝敗 */
+      .parent-result,
+      .child-result {
+        position: absolute;
+        width: 210px;
+        height: 80px;
+        font-size: 20px;
+      }
+      .parent-result {
+        left: 0;
+      }
+      .child-result {
+        right: 0;
+      }
+
+      /* 役 */
+      .role {
+        width: 100%;
+        height: 60px;
+        margin-top: 20px;
+        font-size: 30px;
+      }
+
+      /* カード */
+      .cards {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+      .card {
+        width: 90px;
+        height: 130px;
+        border: 1px solid #000;
+        font-size: 20px;
+      }
+      .card img {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* ゲーム操作 */
+      .game-controls {
+        margin-top: 20px;
+      }
+      .draw-buttons {
+        display: none;
+        justify-content: center;
+        gap: 20px;
+      }
+      .fight-button {
+        display: none;
+        margin: 0 auto;
+      }
+      .reset-button {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="game">
+
+      <!-- 親 -->
+      <section class="parent-area">
+        <div class="player">
+
+          <div class="parent-result">
+            勝ちor負けor引分
+          </div>
+
+          <div class="parent">
+            親
+          </div>
+        </div>
+
+        <div class="role parent-role">
+          親の役名を表示
+        </div>
+
+        <div class="cards parent-cards">
+          <div class="card">
+            トランプ<br>表示
+          </div>
+
+          <div class="card">
+            トランプ<br>表示
+          </div>
+
+          <div class="card">
+            トランプ<br>表示
+          </div>
+
+          <div class="card">
+            トランプ<br>表示
+          </div>
+
+          <div class="card">
+            トランプ<br>表示
+          </div>
+        </div>
+      </section>
+
+      <!-- ゲーム操作 -->
+      <section class="game-controls">
+
+        <button class="start">
+          ゲームスタート
+        </button>
+
+        <button class="reset-button">
+          最初に戻る
+        </button>
+
+        <div class="draw-buttons">
+          <button class="parent-draw">
+            親のカードを抽選
+          </button>
+
+          <button class="child-draw">
+            子のカードを抽選
+          </button>
+        </div>
+
+        <button class="fight-button">
+          勝負！
+        </button>
+      </section>
+
+      <!-- 子 -->
+      <section class="child-area">
+        <div class="cards child-cards">
+          <div class="card">
+            トランプ<br>表示
+          </div>
+
+          <div class="card">
+            トランプ<br>表示
+          </div>
+
+          <div class="card">
+            トランプ<br>表示
+          </div>
+
+          <div class="card">
+            トランプ<br>表示
+          </div>
+
+          <div class="card">
+            トランプ<br>表示
+          </div>
+        </div>
+
+        <div class="role child-role">
+          子の役名を表示
+        </div>
+
+        <div class="player">
+          <div class="child">
+            子
+          </div>
+
+          <div class="child-result">
+            勝ちor負けor引分
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+    <script src="js/javascript_general_mission_5_1.js"></script>
+  </body>
+</html>
